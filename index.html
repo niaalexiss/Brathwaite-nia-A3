@@ -1,248 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfume Haven</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #975935;
-            color: #FFF;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Haven</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #975935;
+      color: #FFF;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+    }
 
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: 1px;
-        }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-        }
+    h1 {
+      font-size: 2.5rem;
+    }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
 
-        p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
 
-        nav a {
-            font-size: 1.1rem;
-        }
+    nav {
+      background-color: #FFC971;
+      display: flex;
+      justify-content: center;
+    }
 
-        header {
-            background: url('IMG_8013.jpg') no-repeat center center/cover;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+      float: left;  /* Float links to the left */
+    }
 
-        nav {
-            background-color: #FFC971;
-            display: flex;
-            justify-content: center;
-        }
+    nav a:hover {
+      background-color: #FFF8D6;
+      color: black;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            text-align: center;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    header {
+      background: url('IMG_8013.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
 
-        nav a:hover {
-            background-color: #FFF8D6;
-            color: black;
-        }
+    section {
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        section {
-            padding: 20px;
-            border-bottom: 1px solid #ccc;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .gallery {
+      display: block;
+      overflow: hidden;
+      margin: 0 auto;
+    }
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
+    .gallery img {
+      width: 150px;
+      height: 200px;
+      border: 2px solid #ddd;
+      transition: transform 0.3s, box-shadow 0.3s;
+      float: left; /* Float images to the left */
+      margin-right: 10px;  /* Space between images */
+      margin-bottom: 10px;  /* Space between images */
+    }
 
-        .gallery img {
-            width: 150px;
-            height: 200px;
-            border: 2px solid #ddd;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-color: #555;
+    }
 
-        .gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            border-color: #555;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
 
-        table, th, td {
-            border: 1px solid #ccc;
-        }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+    footer {
+      background-color: #FFC971;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
 
-        footer {
-            background-color: #6A040F;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
+    a[href^="mailto:"] {
+      color: #6A040F;
+      text-decoration: none;
+    }
 
-        a[href^="mailto:"] {
-            color: #6A040F;
-            text-decoration: none;
-        }
+    a[href^="mailto:"]:hover {
+      text-decoration: underline;
+    }
 
-        a[href^="mailto:"]:hover {
-            text-decoration: underline;
-        }
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+        height: auto;
+        text-align: center;
+      }
 
-        @media (max-width: 768px) {
-            header {
-                padding: 20px;
-                height: auto;
-                text-align: center;
-            }
+      nav {
+        flex-direction: column;
+        padding: 10px;
+      }
 
-            nav {
-                flex-direction: column;
-                padding: 10px;
-            }
+      nav a {
+        padding: 8px 10px;
+        font-size: 1rem;
+      }
 
-            nav a {
-                padding: 8px 10px;
-                font-size: 1rem;
-            }
+      .gallery img {
+        width: 120px;
+        height: 160px;
+      }
+    }
 
-            .gallery img {
-                width: 120px;
-                height: 160px;
-            }
-        }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
+      h2 {
+        font-size: 1.5rem;
+      }
 
-            h2 {
-                font-size: 1.5rem;
-            }
+      p {
+        font-size: 0.9rem;
+      }
 
-            p {
-                font-size: 0.9rem;
-            }
+      .gallery img {
+        width: 100px;
+        height: 140px;
+      }
 
-            .gallery img {
-                width: 100px;
-                height: 140px;
-            }
+      footer {
+        font-size: 0.8rem;
+      }
+    }
 
-            footer {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    /* Clearfix for floated elements */
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Nia's Perfume Haven</h1>
-        <p>Your go-to blog for all things fragrance.</p>
-    </header>
+  <header>
+    <h1>Nia's Perfume Haven</h1>
+    <p>Your go-to blog for all things fragrance.</p>
+  </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <a href="https://fragrantica.com" target="_blank">Fragrantica</a>
-        <a href="https://fragrancebuy.ca/" target="_blank">FragranceBuy</a>
-    </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="https://fragrantica.com" target="_blank">Fragrantica</a>
+    <a href="https://fragrancebuy.ca/" target="_blank">FragranceBuy</a>
+  </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to Nia's Perfume Haven, where I delve into the art and science of fine fragrances. Discover the makers 
-        behind popular scents, their origins, and my personal thoughts on them.</p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Welcome to Nia's Perfume Haven, where I delve into the art and science of fine fragrances. Discover the makers 
+    behind popular scents, their origins, and my personal thoughts on them.</p>
+  </section>
 
-    <section id="reviews">
-        <h2>Perfume Reviews</h2>
-        <p>Check out my thoughts on some popular releases:</p>
-        <table>
-            <tr>
-                <th>Perfume</th>
-                <th>Brand</th>
-                <th>Rating</th>
-            </tr>
-            <tr>
-                <td>La Vie Est Belle</td>
-                <td>Lancome</td>
-                <td>9/10</td>
-            </tr>
-            <tr>
-                <td>Daisy</td>
-                <td>Marc Jacobs</td>
-                <td>8.5/10</td>
-            </tr>
-            <tr>
-                <td>Good Girl</td>
-                <td>Carolina Herrera</td>
-                <td>9.5/10</td>
-            </tr>
-        </table>
-    </section>
+  <section id="reviews">
+    <h2>Perfume Reviews</h2>
+    <p>Check out my thoughts on some popular releases:</p>
+    <table>
+      <tr>
+        <th>Perfume</th>
+        <th>Brand</th>
+        <th>Rating</th>
+      </tr>
+      <tr>
+        <td>La Vie Est Belle</td>
+        <td>Lancome</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Daisy</td>
+        <td>Marc Jacobs</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td>Good Girl</td>
+        <td>Carolina Herrera</td>
+        <td>9.5/10</td>
+      </tr>
+    </table>
+  </section>
 
-    <section id="gallery">
-        <h2>Perfume Gallery</h2>
-        <div class="gallery">
-            <img src="IMG_8005.JPG" alt="Bottle of Daisy Perfume">
-            <img src="IMG_8007.JPG" alt="Bottle of La Vie Est Belle">
-            <img src="IMG_8009.JPG" alt="Bottle of Versace Bright Crystal">
-            <img src="IMG_8006.JPG" alt="Bottle of Good Girl Perfume">
-            <img src="IMG_8008.JPG" alt="Bottle of Chanel No. 5">
-        </div>
-    </section>
+  <section id="gallery" class="clearfix">
+    <h2>Perfume Gallery</h2>
+    <div class="gallery">
+      <img src="IMG_8005.JPG" alt="Bottle of Daisy Perfume">
+      <img src="IMG_8007.JPG" alt="Bottle of La Vie Est Belle">
+      <img src="IMG_8009.JPG" alt="Bottle of Versace Bright Crystal">
+      <img src="IMG_8006.JPG" alt="Bottle of Good Girl Perfume">
+      <img src="IMG_8008.JPG" alt="Bottle of Chanel No. 5">
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have a question or a perfume you want us to review? Reach out!</p>
-        <p>Email us at <a href="mailto:nbrathwa@uwaterloo.ca">nbrathwa@uwaterloo.ca</a>.</p>
-    </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or a perfume you want us to review? Reach out!</p>
+    <p>Email us at <a href="mailto:nbrathwa@uwaterloo.ca">nbrathwa@uwaterloo.ca</a>.</p>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 Perfume Haven. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 Nia's Perfume Haven. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
+
+
